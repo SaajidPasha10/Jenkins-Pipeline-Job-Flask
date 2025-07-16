@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    environment{
+    environments{
         ENV_DIR = "env"
         email_recepient = "saajidpasha@gmail.com"
         PORT=5000
@@ -19,8 +19,8 @@ pipeline{
                         }
                         
                         else{
-                             bat 'python3 -m venv \$VENV_DIR'
-                            bat '. \$VENV_DIR/bin/activate'
+                             bat 'python3 -m venv \%VENV_DIR%'
+                            bat '. \%VENV_DIR%/bin/activate'
                             bat 'pip install -r requirements.txt'
                         }
                     }
@@ -38,7 +38,7 @@ pipeline{
                     }
                     else{
                         bat 'echo "Testing the Flask App........"'
-                        bat '. \$VENV_DIR/bin/activate'
+                        bat '. \%VENV_DIR%/bin/activate'
                         bat 'pytest test_app.py'
                     }
                 }
@@ -55,7 +55,7 @@ pipeline{
                     }
                     else{
                         bat 'echo "Deploying the Flask App on $PORT ........"'
-                        bat '. \$VENV_DIR/bin/activate'
+                        bat '. \%VENV_DIR%/bin/activate'
                         bat 'start /B cmd /c "set FLASK_APP=%FLASK_APP% && %VENV_DIR%\\Scripts\\flask run   --host=0.0.0.0 --port=%FLASK_PORT%"'
                     }
                     sleep(3000)
