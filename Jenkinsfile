@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    environments{
+    environment{
         ENV_DIR = "env"
         email_recepient = "saajidpasha@gmail.com"
         PORT=5000
