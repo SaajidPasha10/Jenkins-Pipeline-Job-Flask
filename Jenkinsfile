@@ -1,4 +1,5 @@
 pipeline{
+    agent any
     environments{
         ENV_DIR = "env"
         email_recepient = "saajidpasha@gmail.com"
