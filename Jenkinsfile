@@ -67,14 +67,14 @@ pipeline {
               nohup python app.py > flask.log 2>&1 &
             """
           } else {
-            script{
+           
               bat """
               echo Deploying Flask app on Windows...
               call %VENV_DIR%\\Scripts\\activate
               powershell -Command "Start-Process python 'app.py'"
             """
               sleep(3000)
-          }
+          
         }
       }
     }
