@@ -9,11 +9,7 @@ pipeline {
 }
 
   stages {
-    stage('Clone Repo') {
-      steps {
-        git 'https://github.com/yourusername/flask-jenkins-demo.git'
-      }
-    }
+   
 
     stage('Set Up Environment') {
       steps {
