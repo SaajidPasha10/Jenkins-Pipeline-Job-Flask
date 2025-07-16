@@ -5,6 +5,17 @@ This pipeline builds, tests, and deploys a Flask application, compatible with bo
 
 ---
 
+### Jenkins Configurations to receive email's
+
+Install Email Plugin
+![](screenshots/email1.png)
+
+## Add SMTP Details
+
+![](screenshots/smtp2.png)
+
+---
+
 ### Environment Variables
 
 ```groovy
@@ -112,6 +123,9 @@ post {
 }
 ```
 
+### App runs in background for 1 min
+
+![](screenshots/output3.png)
 ---
 
 ### Notes
