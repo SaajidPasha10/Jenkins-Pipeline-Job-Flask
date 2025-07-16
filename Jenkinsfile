@@ -4,6 +4,9 @@ pipeline {
   environment {
     VENV_DIR = 'venv'
   }
+  tools {
+  git 'DefaultGit'
+}
 
   stages {
     stage('Clone Repo') {
