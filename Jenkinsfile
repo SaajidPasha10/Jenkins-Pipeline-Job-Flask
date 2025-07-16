@@ -8,13 +8,15 @@ pipeline{
         
         stage('Build'){
             steps{
-                if(isUnix()){
+                
                     script{
                         if(fileExists('requirements.txt')){
+                            if(isUnix()){
                             sh 'python3 -m venv \$VENV_DIR'
                             sh '. \$VENV_DIR/bin/activate'
                             sh 'pip install -r requirements.txt'
                         }
+                        
                         else{
                              bat 'python3 -m venv \$VENV_DIR'
                             bat '. \$VENV_DIR/bin/activate'
