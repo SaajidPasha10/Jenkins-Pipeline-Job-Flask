@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         VENV_DIR = "env"
-        RECIPIENTS = "saajidpasha@gmail.com"
+        RECIPIENTS = "YOUR EMAIL HERE"
         FLASK_PORT = "5000"
     }
 
